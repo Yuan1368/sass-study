@@ -1,0 +1,13 @@
+%boxStyle{
+  color: skyblue;
+  width: 100px;
+  height: 100px;
+}
+
+%divStyle{
+  color: red;
+}
+
+.box1{
+  @extend %boxStyle;
+}

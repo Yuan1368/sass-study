@@ -314,6 +314,69 @@ div {
 /*# sourceMappingURL=demo10.css.map */
 ```
 
-### 占位符
+## 占位符
+
+在 sass 中可以使用`%placeholder`占位符声明一段样式，如果这段样式不使用`@extend`调用，那么它将不会出现编译生成的 css 样式中。例：
+
+```scss
+%boxStyle{
+  color: skyblue;
+  width: 100px;
+  height: 100px;
+}
+
+%divStyle{
+  color: red;
+}
+
+.box1{
+  @extend %boxStyle;
+}
+```
+
+编译结果：
+
+```css
+.box1 {
+  color: skyblue;
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=demo11.css.map */
+```
+
+使用占位符避免写 css 样式时，出现的大量冗余代码。
+
+> 混合宏、继承和占位符它们都有各自的特点。混合宏的特点在于它允许使用参数，如果我们想要传递参数，就需要考虑使用混合宏。继承可以将一个基本样式作为基类被其它样式所继承，如果不需要使用变量，并且已经含有一个基类想要继承，就可以考虑使用继承了。而占位符可以独立定义样式，如果不想生成大量冗余样式，就可以考虑使用占位符了。
+
+## 插值语法#{}
+
+插值语法使选择器和属性名可以使用变量，例：
+
+```scss
+$name:button;
+$a: color;
+
+.#{$name}{
+  background-#{$a}: blue;
+  width: 100px;
+  height: 100px;
+  #{$a}: red;
+}
+```
+
+编译结果：
+
+```css
+.button {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+  color: red;
+}
+/*# sourceMappingURL=demo12.css.map */
+```
+
+看着挺强大，但是没有使用原生的属性名或者选择器名来得更方便些，配合之后内容中`#each`将会显得更加实用些。
 
 

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAUA,AAVA,KAUK,CAVI;EACP,KAAK,EAAE,OAAO;EACd,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CACd",
+    "sources": [
+        "demo11.scss"
+    ],
+    "names": [],
+    "file": "demo11.css"
+}

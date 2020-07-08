@@ -1,0 +1,9 @@
+$name:button;
+$a: color;
+
+.#{$name}{
+  background-#{$a}: blue;
+  width: 100px;
+  height: 100px;
+  #{$a}: red;
+}

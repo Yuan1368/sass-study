@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,OAAO,CAAE;EACP,gBAAgB,EAAa,IAAI;EACjC,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "demo12.scss"
+    ],
+    "names": [],
+    "file": "demo12.css"
+}

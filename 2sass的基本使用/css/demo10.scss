@@ -1,0 +1,13 @@
+@mixin mainColor($color) {
+  color: $color;
+  background-color: $color;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  @include mainColor(red);
+}
+
+.box1{
+  @extend .box;
+}

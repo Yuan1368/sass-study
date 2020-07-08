@@ -1,0 +1,6 @@
+//demo3.scss
+$boxHeight: 100px;
+$boxHeight: 200px !default;
+div{
+  height: $boxHeight;
+}

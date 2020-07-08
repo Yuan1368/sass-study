@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,IADE,AACD,QAAQ,EADX,IAAI,AAED,OAAO,CAAA;EACN,OAAO,EAAC,EAAE;EACV,OAAO,EAAE,KAAK;CACf;;AALH,AAME,IANE,AAMD,QAAQ,CAAA;EACP,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "demo7.scss"
+    ],
+    "names": [],
+    "file": "demo7.css"
+}

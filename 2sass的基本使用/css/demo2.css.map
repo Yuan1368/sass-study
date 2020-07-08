@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACGA,AAAA,GAAG,CAAA;EACD,KAAK,EAFG,KAAK;CAGd",
+    "sources": [
+        "demo2.scss",
+        "demo1.scss"
+    ],
+    "names": [],
+    "file": "demo2.css"
+}

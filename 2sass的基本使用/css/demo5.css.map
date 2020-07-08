@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAA;EACF,KAAK,EAHE,GAAG;CAcX;;AAZD,AAEE,IAFE,CAEF,GAAG,CAAA;EAED,KAAK,EADG,IAAI;CAKb;;AARH,AAKI,IALA,CAEF,GAAG,CAGD,IAAI,CAAA;EACF,KAAK,EAHC,IAAI;CAIX;;AAPL,AASE,IATE,CASF,EAAE,CAAA;EACA,KAAK,EAZA,GAAG;CAaT",
+    "sources": [
+        "demo5.scss"
+    ],
+    "names": [],
+    "file": "demo5.css"
+}

@@ -1,0 +1,15 @@
+$color : red;
+
+body{
+  color: $color;
+  div{
+    $color: blue;
+    color: $color;
+    span{
+      color: $color;
+    }
+  }
+  h1{
+    color: $color;
+  }
+}

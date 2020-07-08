@@ -1,0 +1,9 @@
+.box::before, .box::after {
+  content: "";
+  display: block;
+}
+
+.box::before {
+  color: blue;
+}
+/*# sourceMappingURL=demo7.css.map */

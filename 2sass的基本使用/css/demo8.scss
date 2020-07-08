@@ -1,0 +1,24 @@
+//不带参数的混合宏声明
+@mixin mainColor{
+  color: blue;
+  background-color: blue;
+}
+
+//带参数的混合宏声明
+@mixin mainHeight($length:100px){
+  height: $length;
+  margin-top: $length;
+}
+
+.box{
+  @include mainHeight(200px);
+}
+
+@mixin length($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+.box1{
+  @include length(100px, 200px);
+}

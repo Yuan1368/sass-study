@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,IAAI,EAMJ,KAAK,CAND;EACF,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EALb,KAAK,EAMc,GAAG;EALtB,gBAAgB,EAKG,GAAG;CACvB",
+    "sources": [
+        "demo10.scss"
+    ],
+    "names": [],
+    "file": "demo10.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAYA,AAAA,IAAI,CAAA;EAJF,MAAM,EAKc,KAAK;EAJzB,UAAU,EAIU,KAAK;CAC1B;;AAOD,AAAA,KAAK,CAAA;EAJH,MAAM,EAKU,KAAK;EAJrB,KAAK,EAIkB,KAAK;CAC7B",
+    "sources": [
+        "demo8.scss"
+    ],
+    "names": [],
+    "file": "demo8.css"
+}

@@ -1,0 +1,10 @@
+.box{
+  &::before,
+  &::after{
+    content:"";
+    display: block;
+  }
+  &::before{
+    color: blue;
+  }
+}

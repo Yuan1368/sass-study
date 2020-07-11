@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACE,AAAA,KAAK,CAAI;EACP,KAAK,EAAE,IAAS;CACjB;;AAFD,AAAA,KAAK,CAAI;EACP,KAAK,EAAE,IAAS;CACjB;;AAFD,AAAA,KAAK,CAAI;EACP,KAAK,EAAE,IAAS;CACjB;;AAFD,AAAA,KAAK,CAAI;EACP,KAAK,EAAE,IAAS;CACjB;;AAFD,AAAA,KAAK,CAAI;EACP,KAAK,EAAE,IAAS;CACjB",
+    "sources": [
+        "demo6.scss"
+    ],
+    "names": [],
+    "file": "demo6.css"
+}

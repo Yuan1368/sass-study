@@ -1,0 +1,7 @@
+$length: 10 !default;
+@while $length > 0{
+  .box#{$length}{
+    width: $length * 10px;
+  }
+  $length : $length - 1;
+}

@@ -1,0 +1,11 @@
+.text1{
+  content: unquote($string: "'Hello World!'");
+}
+
+.text2{
+  content: unquote($string: '"Hello World!"');
+}
+
+.text3{
+  content: unquote($string: "H'ello");
+}

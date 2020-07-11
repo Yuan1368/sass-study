@@ -1,0 +1,5 @@
+@for $i from 1 through 5{
+  .box#{$i}{
+    width: 10px * $i;
+  }
+}

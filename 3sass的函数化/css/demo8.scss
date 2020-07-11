@@ -1,0 +1,8 @@
+$selectors: div h1 span;
+@each $var in $selectors{
+  #{$var}{
+    color: red;
+    width: 100px;
+    height: 100px;
+  }
+}

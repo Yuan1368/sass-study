@@ -1,0 +1,11 @@
+.box1{
+  content: quote($string: "'Hello'");
+}
+
+.box2{
+  content: quote($string: Hello);
+}
+
+.box3{
+  content: quote($string: 'Hello');
+}

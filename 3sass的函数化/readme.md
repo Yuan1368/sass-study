@@ -183,3 +183,233 @@ $length: 100px;
 /*# sourceMappingURL=demo5.css.map */
 ```
 
+### @for循环
+
+sass 可以使用`@for`循环，主要有以下两种用法：
+
+```scss
+@for $i from <start> through <end>
+@for $i from <start> to <end>
+```
+
+`$i`是变量，`start`表示开始值，`end`表示结束值，`through`与`to`的区别在于`through`用法包含结束值，而`to`不包含结束值。
+
+用法示例：
+
+```scss
+@for $i from 1 through 5{
+  .box#{$i}{
+    width: 10px * $i;
+  }
+}
+```
+
+编译结果：
+
+```css
+.box1 {
+  width: 10px;
+}
+
+.box2 {
+  width: 20px;
+}
+
+.box3 {
+  width: 30px;
+}
+
+.box4 {
+  width: 40px;
+}
+
+.box5 {
+  width: 50px;
+}
+/*# sourceMappingURL=demo6.css.map */
+```
+
+### @while循环
+
+`@while`循环与`@for`循环用法类似，只需要`@while`后的表达式为`true`就可以进行循环，例：
+
+```scss
+$length: 10 !default;
+@while $length > 0{
+  .box#{$length}{
+    width: $length * 10px;
+  }
+  $length : $length - 1;
+}
+```
+
+编译结果：
+
+```css
+.box10 {
+  width: 100px;
+}
+
+.box9 {
+  width: 90px;
+}
+
+.box8 {
+  width: 80px;
+}
+
+.box7 {
+  width: 70px;
+}
+
+.box6 {
+  width: 60px;
+}
+
+.box5 {
+  width: 50px;
+}
+
+.box4 {
+  width: 40px;
+}
+
+.box3 {
+  width: 30px;
+}
+
+.box2 {
+  width: 20px;
+}
+
+.box1 {
+  width: 10px;
+}
+/*# sourceMappingURL=demo7.css.map */
+```
+
+### @each
+
+遍历一个列表变量，每次从列表变量中取出一个值，其用法类似于 ES6 的`for...of...`循环用法。语法格式为：
+
+```scss
+@each $var in <list>
+```
+
+`$var`是变量，`list`是列表变量。
+
+用法示例：
+
+```scss
+$selectors: div h1 span;
+@each $var in $selectors{
+  #{$var}{
+    color: red;
+    width: 100px;
+    height: 100px;
+  }
+}
+```
+
+编译结果：
+
+```css
+div {
+  color: red;
+  width: 100px;
+  height: 100px;
+}
+
+h1 {
+  color: red;
+  width: 100px;
+  height: 100px;
+}
+
+span {
+  color: red;
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=demo8.css.map */
+```
+
+## 函数功能
+
+scss 中内置了一些比较常用的函数，此节内容将会简单介绍。
+
+### 字符串函数
+
+#### unquote($string)
+
+这个函数不会区分单双引号，主要用来删除字符串开头和结尾的单引号或者双引号，对于字符串中间的引号会保留开始到中间引号的部分，但是会删除中间引号之后的内容（由于它不区分单双引号，这算是个bug，不要乱用）；如果字符串不含有引号，则会报错。
+
+用法示例：
+
+```scss
+.text1{
+  content: unquote($string: "'Hello World!'");
+}
+
+.text2{
+  content: unquote($string: '"Hello World!"');
+}
+
+.text3{
+  content: unquote($string: "H'ello");
+}
+```
+
+编译结果：
+
+```css
+.text1 {
+  content: 'Hello World!';
+}
+
+.text2 {
+  content: "Hello World!";
+}
+
+.text3 {
+  content: H;
+}
+/*# sourceMappingURL=demo9.css.map */
+```
+
+#### quote函数
+
+与`unquote`函数的作用相反，会给没有引号的内容添加上单双引号，如果本身含有单引号会被替换成双引号，中间的引号会被保留。例：
+
+```scss
+.box1{
+  content: quote($string: "'Hello'");
+}
+
+.box2{
+  content: quote($string: Hello);
+}
+
+.box3{
+  content: quote($string: 'Hello');
+}
+```
+
+编译结果：
+
+```css
+.box1 {
+  content: "'Hello'";
+}
+
+.box2 {
+  content: "Hello";
+}
+
+.box3 {
+  content: "Hello";
+}
+/*# sourceMappingURL=demo10.css.map */
+```
+
+#### 

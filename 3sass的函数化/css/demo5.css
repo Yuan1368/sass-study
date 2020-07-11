@@ -1,0 +1,15 @@
+.header {
+  width: 200px;
+  color: red;
+}
+
+.header .box {
+  width: 75px;
+  color: yellow;
+}
+
+.header .box .box1 {
+  width: 50px;
+  color: blue;
+}
+/*# sourceMappingURL=demo5.css.map */

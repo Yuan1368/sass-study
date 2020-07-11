@@ -1,0 +1,9 @@
+$selector:".header";
+div.box #{$selector}{
+  width: 100px;
+  color: red;
+  &::after{
+    content: "";
+  }
+}
+

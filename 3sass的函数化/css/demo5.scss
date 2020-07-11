@@ -1,0 +1,24 @@
+@mixin easySheet($length) {
+  @if($length > 100px){
+    width: $length;
+    color: red;
+  }
+  @else if($length > 50px){
+    width: 75px;
+    color: yellow;
+  }
+  @else{
+    width: 50px;
+    color: blue;
+  }
+}
+
+.header{
+  @include easySheet(200px);
+  .box{
+    @include easySheet(60px);
+    .box1{
+      @include easySheet(20px);
+    }
+  }
+}

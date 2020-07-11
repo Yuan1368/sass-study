@@ -1,0 +1,6 @@
+$base-width: 200px;
+$length: 100px;
+
+.header{
+  width: $base-width - $length;
+}

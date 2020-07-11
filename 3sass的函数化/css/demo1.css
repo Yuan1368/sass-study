@@ -1,0 +1,9 @@
+div.box .header {
+  width: 100px;
+  color: red;
+}
+
+div.box .header::after {
+  content: "";
+}
+/*# sourceMappingURL=demo1.css.map */

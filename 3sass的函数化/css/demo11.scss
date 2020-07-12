@@ -1,0 +1,7 @@
+div{
+  content: to-upper-case($string: "abcd");
+}
+
+span{
+  content: to-lower-case($string: "Hello");
+}

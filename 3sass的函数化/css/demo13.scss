@@ -1,0 +1,7 @@
+div{
+  width: round(13.4px);
+  border-width: round(15.5px);
+  height: ceil(15.1px);
+  line-height: floor(15.9px);
+  margin: abs($number: -10px);
+}

@@ -412,4 +412,102 @@ scss 中内置了一些比较常用的函数，此节内容将会简单介绍。
 /*# sourceMappingURL=demo10.css.map */
 ```
 
-#### 
+#### to-upper-case函数、to-lower-case函数
+
+`to-upper-case`函数能将小写字母改为大写字母。`to-lower-case`与它相反，能将大写字母改为小写。
+
+用法示例：
+
+```scss
+div{
+  content: to-upper-case($string: "abcd");
+}
+
+span{
+  content: to-lower-case($string: "Hello");
+}
+```
+
+编译结果：
+
+```css
+div {
+  content: "ABCD";
+}
+
+span {
+  content: "hello";
+}
+/*# sourceMappingURL=demo11.css.map */
+```
+
+###数字函数
+
+#### percentage函数
+
+`percentage`函数能将不带单位的数字改为带百分号的数值。例：
+
+```scss
+div{
+  width: percentage($number: 20);
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 2000%;
+}
+/*# sourceMappingURL=demo12.css.map */
+```
+
+#### round函数、ceil函数、floor函数、abs函数
+
+`round`函数将数值四舍五入，`ceil`函数将小数转换为大于这个小数的下一位整数，`floor`将小数的小数位置丢弃，`abs`函数用来求一个数的绝对值。
+
+用法示例：
+
+```scss
+div{
+  width: round(13.4px);
+  border-width: round(15.5px);
+  height: ceil(15.1px);
+  line-height: floor(15.9px);
+  margin: abs($number: -10px);
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 13px;
+  border-width: 16px;
+  height: 16px;
+  line-height: 15px;
+  margin: 10px;
+}
+/*# sourceMappingURL=demo13.css.map */
+```
+
+#### min函数、max函数
+
+`min`函数求几个数值中的最小值，`max`函数求几个数值中的最大值。例：
+
+```scss
+div{
+  width: max(22px, 23px, 25);
+  height: min(12px, 23px, 15px);
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 25;
+  height: 12px;
+}
+/*# sourceMappingURL=demo14.css.map */
+```

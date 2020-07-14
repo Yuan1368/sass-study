@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CAAA;EACD,MAAM,EAAe,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI;CACjF",
+    "sources": [
+        "demo19.scss"
+    ],
+    "names": [],
+    "file": "demo19.css"
+}

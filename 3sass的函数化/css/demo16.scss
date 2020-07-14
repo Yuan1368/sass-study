@@ -1,0 +1,5 @@
+$num: length($list: (12px 23px (2px solid black) 44px));
+
+div{
+  width: $num;
+}

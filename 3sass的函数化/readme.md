@@ -441,7 +441,7 @@ span {
 /*# sourceMappingURL=demo11.css.map */
 ```
 
-###数字函数
+### 数字函数
 
 #### percentage函数
 
@@ -510,4 +510,121 @@ div {
   height: 12px;
 }
 /*# sourceMappingURL=demo14.css.map */
+```
+
+#### random()函数
+
+`random()`是一个用来生成随机数的函数。
+
+```scss
+div{
+  width: random($limit: 20)px;
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 16 px;
+}
+/*# sourceMappingURL=demo15.css.map */
+```
+
+`$limit`用来限制它的数值范围，如果不设置，它默认是0~1的范围，可以配合加减法，使它拥有一个非零的下限，例：
+
+```scss
+// -20~40的数值范围：
+random($limit:40) - 20;
+
+// 20~40的数值范围；
+random($limit:40) + 20;
+```
+
+### 列表函数
+
+#### length函数
+
+
+`length`函数用来计算列表中有几个数值，但是需要注意的是列表中的数值需要用逗号隔开，使用空格隔开会报错。
+
+```scss
+$num: length($list: (12px 23px (2px solid black) 44px));
+
+div{
+  width: $num;
+}
+```
+
+```css
+div {
+  width: 4;
+}
+/*# sourceMappingURL=demo16.css.map */
+```
+
+#### nth函数
+
+语法：
+
+```scss
+nth($list,$n)
+```
+
+`nth`函数用来指定`$list`列表中第`$n`个位置上的数值，要注意的是 sass 从1开始计数。例：
+
+```sass
+// 在此处 nth 函数用来获取 $list 中第2个位置上的数值，$n为2， 表示第二个位置。
+div{
+  width: nth($list: (12px 23px (solid, 1px, black)), $n:2 );
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 23px;
+}
+/*# sourceMappingURL=demo17.css.map */
+```
+
+### join函数
+
+`join`函数用来将两个列表合并成一个。例：
+
+```scss
+div{
+  box-shadow: join($list1: 1px 2px, $list2:3px 1px red );
+}
+```
+
+编译结果：
+
+```css
+div {
+  box-shadow: 1px 2px 3px 1px red;
+}
+/*# sourceMappingURL=demo18.css.map */
+```
+
+需要注意的是`join`函数只能将两个列表合并成一个，如果超过两个它会报错。它还有第三个参数`$separator`，默认值是`auto`，用来设置列表中值与值之间分隔的符号，可以设置成`space`（空格）、`comma`（逗号）。
+
+#### zip函数
+
+`zip`函数用来将多个列表合并成一个多维的列表，这个多维的列表中的每一项对应的是多个列表中每个位置上的值合并成一个列表后的值，因而要合并的每一个列表中值的个数都必须要相等。例：
+
+```scss
+div{
+  border: zip($lists: (1px 2px #123012, 2px 4px #cccccc, 3px 4px red, 5px 2px blue));
+}
+```
+
+编译结果：
+
+```css
+div {
+  border: 1px 2px #123012, 2px 4px #cccccc, 3px 4px red, 5px 2px blue;
+}
+/*# sourceMappingURL=demo19.css.map */
 ```

@@ -1,0 +1,4 @@
+// 在此处 nth 函数用来获取 $list 中第2个位置上的数值，$n为2， 表示第二个位置。
+div{
+  width: nth($list: (12px 23px (solid, 1px, black)), $n:2 );
+}

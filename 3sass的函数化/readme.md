@@ -545,7 +545,6 @@ random($limit:40) + 20;
 
 #### length函数
 
-
 `length`函数用来计算列表中有几个数值，但是需要注意的是列表中的数值需要用逗号隔开，使用空格隔开会报错。
 
 ```scss
@@ -589,7 +588,7 @@ div {
 /*# sourceMappingURL=demo17.css.map */
 ```
 
-### join函数
+#### join函数
 
 `join`函数用来将两个列表合并成一个。例：
 
@@ -628,3 +627,165 @@ div {
 }
 /*# sourceMappingURL=demo19.css.map */
 ```
+
+#### index函数
+
+`index`函数用于查找某个值在列表中的位置索引值。例：
+
+```scss
+div{
+  width: index($list: (20px 2px 12px), $value:12px );
+}
+```
+
+编译结果：
+
+```css
+div {
+  width: 3;
+}
+/*# sourceMappingURL=demo20.css.map */
+```
+
+#### comparable函数
+
+`comparable`函数主要是用来判断两个数是否可以进行“加，减”以及“合并”。如果可以返回的值为 true，如果不可以返回的值是 false，例：
+
+```scss
+>> comparable(2px,1px)
+true
+
+>> comparable(2px,1%)
+false
+
+>> comparable(2px,1em)
+false
+
+>> comparable(2rem,1em)
+false
+
+>> comparable(2px,1cm)
+true
+
+>> comparable(2px,1mm)
+true
+
+>> comparable(2px,1rem)
+false
+
+>> comparable(2cm,1mm)
+true
+```
+
+#### Miscellaneous函数
+
+这里把`Miscellaneous`函数称为三元条件函数，主要因为他和 JavaScript 中的三元判断非常的相似。他有两个值，当条件成立返回一种值，当条件不成立时返回另一种值：
+
+```scss
+if($condition,$if-true,$if-false)
+```
+
+上面表达式的意思是当 $condition 条件成立时，返回的值为 $if-true，否则返回的是 $if-false 值。
+
+```scss
+>> if(true,1px,2px)
+1px
+>> if(false,1px,2px)
+2px
+```
+
+### sass中的 Map
+
+sass 中的 Map 类似于 JavaScript 中的对象，它的语法格式为：
+
+```scss
+$map: (
+    $key1: value1,
+    $key2: value2,
+    $key3: value3
+)
+```
+
+我们可以使用它为一个变量声明多个不同的值，在需要的时候使用不同的值，这样方便我们集中管理一种类型的值。
+
+用法示例，为声明颜色变量`$color`，然后在 Map 内部声明出文字颜色`text-color`，背景颜色`bg-color`，边框颜色`border-color`。
+
+```scss
+$color:(
+  color: #026123;
+  bg-color: #022fff;
+  border-color: #02fcfc;
+);
+```
+
+如果我们要使用声明好的的值就不得不了解 Map 的相关函数了。
+
+#### map-keys($map)
+
+`map-keys`函数返回`$map`中的`key`值，也就是说它返回的是一个列表。
+
+#### map-values($map)
+
+`map-values`函数返回`$map`中的`value`值，它返回的也是一个列表。
+
+#### map-get
+
+`map-get($map,$key)`函数的作用是根据`$key`参数，返回`$key`在`$map`中对应的`value`值。如果`$key`不存在`$map`中，将返回`null`值（不会被编译到 css 内）。此函数包括两个参数：
+
+* $map：定义好的 map。
+* $key：需要遍历的 key。
+
+用法示例:
+
+```scss
+$color:(
+  color: #026123,
+  bg-color: #022fff,
+  border-color: #02fcfc,
+);
+
+div{
+  color: map-get($map: $color, $key: color);
+  background-color: map-get($map: $color, $key: bg-color);
+  border: map-get($map: $color, $key: bg-color) 1px solid;
+}
+```
+
+编译结果：
+
+```css
+div {
+  color: #026123;
+  background-color: #022fff;
+  border: #022fff 1px solid;
+}
+/*# sourceMappingURL=demo21.css.map */
+```
+
+### 颜色函数
+
+#### rgb函数、rgba函数、red函数、green函数、blue函数
+
+* `rgb($red,$green,$blue)`：根据红、绿、蓝三个值创建一个颜色，返回一个十六进制颜色值；
+* `rgba($red,$green,$blue,$alpha)`：根据红、绿、蓝和透明度值创建一个颜色，返回一个`rgba`值；
+* `red($color)`：从一个颜色中获取其中红色值，从十六进制值中返回一个红色值；
+* `green($color)`：从一个颜色中获取其中绿色值；
+* `blue($color)`：从一个颜色中获取其中蓝色值；
+
+#### lighten 函数与 darken 函数
+
+ `lighten()`和`darken()`两个函数都是围绕颜色的亮度值做调整的，其中`lighten()`函数会让颜色变得更亮，与之相反的`darken()`函数会让颜色变得更暗。这个亮度值可以是 0~1 之间，不过常用的一般都在 3%~20% 之间。
+
+ 用法示例：
+
+ ```scss
+ //SCSS
+.lighten {
+    background: lighten($baseColor,10%);
+}
+.darken{
+    background: darken($baseColor,10%);
+}
+```
+
+> 以上列举出一些比较常见的函数（也有一些是不太常用的），想要查看更多函数的用法，可以去查看 Sass 的官方文档。

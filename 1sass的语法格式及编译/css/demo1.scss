@@ -1,0 +1,13 @@
+// demo.scss
+$main-family: sans-serif;
+$main-color: blue;
+
+body{
+  font-family: $main-family;
+  color: $main-color;
+  div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid $main-color;
+  }
+}

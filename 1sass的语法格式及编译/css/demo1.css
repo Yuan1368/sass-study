@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+  color: blue;
+}
+
+body div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue;
+}
+/*# sourceMappingURL=demo1.css.map */

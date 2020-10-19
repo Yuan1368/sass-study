@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACGA,AAAA,GAAG,CAAA;EACD,KAAK,EAFG,KAAK;CAGd",
+    "mappings": "ACGA,AAAA,GAAG,CAAA;EACD,KAAK,EAFG,KAAK;CAGd;;ADHD,AAAA,GAAG,CAAA;EACD,KAAK,ECDG,KAAK;CDEd",
     "sources": [
         "demo2.scss",
         "demo1.scss"

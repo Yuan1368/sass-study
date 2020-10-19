@@ -1,0 +1,11 @@
+$color:(
+  color: #026123,
+  bg-color: #022fff,
+  border-color: #02fcfc,
+);
+
+div{
+  color: map-get($map: $color, $key: color);
+  background-color: map-get($map: $color, $key: bg-color);
+  border: map-get($map: $color, $key: bg-color) 1px solid;
+}
